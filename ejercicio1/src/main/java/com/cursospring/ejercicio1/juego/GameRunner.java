@@ -1,5 +1,10 @@
 package com.cursospring.ejercicio1.juego;
 
+/*
+ * Este es un buen ejemplo de Tight Coupling o Acoplamiento Fuerte.
+ * El cargador del juego deberá ser cambiado a otro juego tanto en su atributo como en su constructor para cambiar el juego.
+ * Esto se debe al acoplamiento fuerte.
+ */
 public class GameRunner {
 	
 	MarioGame game;
