@@ -23,8 +23,9 @@ public class AppJugarJavaBasico {
 		gameRunner.run();
 		gameRunner = new GameRunner(pacMan);
 		gameRunner.run();
-		//Cuando le pasamos el juego a GameRunner, lo estamos inyectando (injecting) o cableando (wiring)
 		/*
+		 * Cuando le pasamos el juego a GameRunner, lo estamos inyectando (injecting) o cableando (wiring)
+		 * 
 		 * Injecting, en el contexto de la inyección de dependencias (Dependency Injection), se refiere al
 		 * proceso de proporcionar los objetos (dependencias) que una clase necesita para funcionar, en lugar
 		 * de que la clase misma los cree o gestione. Es una técnica utilizada para reducir el acoplamiento

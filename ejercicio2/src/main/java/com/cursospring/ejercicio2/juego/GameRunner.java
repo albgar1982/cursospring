@@ -8,7 +8,7 @@ package com.cursospring.ejercicio2.juego;
  */
 public class GameRunner {
 	
-	private Juego game; //game es una dependencia de GameRunner
+	private Juego game; //game es una dependencia de GameRunner, ya que GameRunner necesita un Juego
 
 	public GameRunner(Juego juego) {
 		game = juego;
