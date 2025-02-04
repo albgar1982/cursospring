@@ -31,13 +31,15 @@ public class ScopeApplication {
 			System.out.println("///////////////////////////////////////////");
 
 			//Para listar los beans que realmente han sido instanciados y almacenados en el contexto, usa:
-			System.out.println("Beans instanciados:");
+			System.out.println("Instancias de Beans guardadas en el Context:");
 			Arrays.stream(contexto.getBeanFactory().getSingletonNames())
 		      .forEach(System.out::println); //NOTA que de ClaseA ya se ha creado un Bean 
 			
 			System.out.println("///////////////////////////////////////////");
 			
-			//Si no ponemos nada, por defecto la clase será singleton, cada vez que se llame se recurrirá a la misma instancia.
+			//Si no ponemos nada, por defecto la clase será singleton, cada vez que se llame se recurrirá a la misma instancia, que se almacena en el IoC container.
+			
+			System.out.println("Referencias en memoria de las clases singleton:");
 			System.out.println(contexto.getBean(ClaseA.class));
 			System.out.println(contexto.getBean(ClaseA.class));
 			System.out.println(contexto.getBean(ClaseA.class));
@@ -46,13 +48,14 @@ public class ScopeApplication {
 			
 			//Con @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE), cada llamada al objeto crea una nueva instancia de la clase.
 			//Estas instancias NO se guardan en el Spring Context!!!!!!!!!! De hecho, el Garbage Collector las eliminará del JVM cuando vea que no se usan.
+			System.out.println("Referencias en memoria de las clases prototype:");
 			System.out.println(contexto.getBean(ClaseB.class));
 			System.out.println(contexto.getBean(ClaseB.class));
 			System.out.println(contexto.getBean(ClaseB.class));
 			
 			System.out.println("///////////////////////////////////////////");
 
-			System.out.println("Beans instanciados:");
+			System.out.println("Instancias de Beans guardadas en el Context:");
 			Arrays.stream(contexto.getBeanFactory().getSingletonNames())
 		      .forEach(System.out::println);
 		}
