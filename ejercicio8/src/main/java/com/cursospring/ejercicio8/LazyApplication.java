@@ -36,7 +36,7 @@ public class LazyApplication {
 			Arrays.stream( contexto.getBeanDefinitionNames() )
 			.forEach( System.out :: println);
 			
-			//contexto.getBean(ClaseB.class);
+			//contexto.getBean(ClaseB.class); //Cuando se necesite instanciar es cuando se va a crear el Bean, ya que es Lazy
 		}
 	}
 }
@@ -55,7 +55,7 @@ public class LazyApplication {
 	claseA
 	claseB
 	
-	Observa que se ha instanciado un Bean de ClaseA, pero NO de ClaseB, ya que esta última es Lazy y no se instanciará hasta
+	Observa que se ha instanciado un Bean de ClaseA, pero NO de ClaseB, ya que esta última es Lazy (perezosa) y no se instanciará hasta
 	que se llame o necesite explícitamente. Descomenta la línea 39 y verás que se instancia ClaseB y cuándo.
 	
 	Se ejecuta el constructor de ClaseA.
