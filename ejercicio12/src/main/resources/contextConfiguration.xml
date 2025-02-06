@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+	http://www.springframework.org/schema/beans schemas/spring-beans.xsd
+	http://www.springframework.org/schema/context schemas/spring-context.xsd">
+	
+	<!-- Definiciones de Beans; igual que usando @Beans -->
+	<bean id="nombre" class="java.lang.String">
+		<constructor-arg value="Alberto" />
+	</bean>
+	
+	<bean id="edad" class="java.lang.Integer">
+		<constructor-arg value="42" />
+	</bean>
+	
+	<!-- A través de este mecanismo, podemos crear un @Component-scan que buscará componentes para crear Beans. 
+	Descomenta esto, comenta los 2 SIGUIENTES Beans y ejecuta para ver los Beans creados en el arranque al escanear. -->
+	<!-- <context:component-scan base-package= "com.cursospring.ejercicio12.juego"/> -->
+	
+	<!-- Se pueden crear Beans de estas clases directamente -->
+	<!-- Primero el juego -->
+	<bean id="juego" class="com.cursospring.ejercicio12.juego.MarioGame" />
+	
+	<!-- Luego el gameRunner al que inyectamos el juego MUY IMPORTANTE usamos ref !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+	<bean id="gameRunner" class="com.cursospring.ejercicio12.juego.GameRunner" >
+		<constructor-arg ref="juego" />
+	</bean>
+		
+</beans>
+        
+
+	
