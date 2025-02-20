@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cursospring</groupId>
-	<artifactId>ejercicio13</artifactId>
+	<artifactId>ejercicio15</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ejercicio13</name>
-	<description>Demo project for Spring Boot</description>
+	<name>ejercicio15</name>
+	<description>Proyecto Spring Web</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -32,7 +32,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -41,11 +41,16 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- Este starter lo que hace es que spring se autoactualice rápidamente al haber cualquier cambio 
+		en el servidor (en el proyecto). Pruébalo añadiendo o quitando un curso en el ControladorCursos y salvando.
+		Cuando refresques la web, ahí estará el curso nuevo. En la consola salen mensajes que incluirán partes como "restartedMain":
+		2025-02-15T20:30:32.341+01:00  INFO 9084 - - - [ejercicio15] [  restartedMain] c.c.ejercicio15.Ejercicio15Application   : Started Ejercicio15Application in 0.277 seconds (process running for 1365.875)
+
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-		
+		-->
 	</dependencies>
 
 	<build>

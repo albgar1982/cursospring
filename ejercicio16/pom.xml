@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cursospring</groupId>
-	<artifactId>ejercicio13</artifactId>
+	<artifactId>ejercicio16</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ejercicio13</name>
-	<description>Demo project for Spring Boot</description>
+	<name>ejercicio16</name>
+	<description>Probando los perfiles</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -40,12 +40,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-		
 	</dependencies>
 
 	<build>

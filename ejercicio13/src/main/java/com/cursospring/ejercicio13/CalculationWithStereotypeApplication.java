@@ -2,19 +2,20 @@ package com.cursospring.ejercicio13;
 
 import java.util.Arrays;
 
+import com.cursospring.ejercicio13.servicios.BusinessCalculationService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.cursospring.ejercicio13.servicios.BusinessCalculationService;
 
 /*
- * Lo único que vamos a hacer en este ejercicio es coger una app que hicimos antes y cambiar la anotación
+ * En este ejercicio vamos a coger una app que hicimos antes y cambiar la anotación
  * @Component, que es genérica, por otras que son especializaciones suyas y que hay que usar para indicar a Spring 
- * qué es específicamente cada componente.
+ * qué es específicamente cada componente. Estas son las anotaciones Stereotype, entre las que se encuentran
+ * @Service, @Repository y @Controller
  * La anotación @Controller se pone en clases que actúan como "controladores" en una aplicación web.
  * Usarías @Controller en clases que:
-	-Manejan solicitudes web.
+	-Manejan solicitudes web como GET, PUT, POST...
 	-Interactúan con otros componentes de tu aplicación para procesar solicitudes.
 	-Preparan y envían respuestas a los clientes.
  */
@@ -32,6 +33,7 @@ public class CalculationWithStereotypeApplication {
 			BusinessCalculationService businessCalculationService = contexto.getBean(BusinessCalculationService.class);
 			
 			System.out.println("El máximo del array es: " + businessCalculationService.findMax());
+			
 		}
 	}
 }
