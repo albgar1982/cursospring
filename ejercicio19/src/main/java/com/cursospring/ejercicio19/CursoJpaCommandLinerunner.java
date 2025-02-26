@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.cursospring.ejercicio19.entidad.Curso;
 import com.cursospring.ejercicio19.jpa.CursoJpaRepositorio;
 
-@Component
+@Component //Para que se cree un Bean en el Spring context
 public class CursoJpaCommandLinerunner implements CommandLineRunner{
 
 	@Autowired
