@@ -19,9 +19,9 @@
 	</properties>
 	<dependencies>
 
-		<!-- Estas dos siguientes dependencias traen muchos otros jar (que esten 
+		<!-- Estas dos siguientes dependencias traen muchos otros jar (que estan en 
 			Maven Dependencies, en la estructura del proyecto) -->
-		<!-- Debajo del pom podemos ver la pesta'dependencies', donde se enumeran 
+		<!-- Debajo del pom podemos ver la pestania 'dependencies', donde se enumeran 
 			las dependencias del pom. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -30,13 +30,13 @@
 
 		<!-- Haciendo clic con el ctrl pulsado, podemos entrar en los pom de cada 
 			dependencia y ver sus propias dependencias. En Maven, las dependencias transitivas 
-			son aquellas dependencias que se aa tu proyecto de forma indirecta, como 
-			consecuencia de las dependencias directas que declaras en tu POM. Imagina 
-			que tu proyecto necesita la librería "A", así que declaras la dependencia 
+			son aquellas dependencias que se aniaden a tu proyecto de forma indirecta, como 
+			consecuencia de las dependencias directas que declaras en tu POM. 
+			Imagina que tu proyecto necesita la libreria "A", asi que declaras la dependencia 
 			de "A" en tu POM. Pero resulta que "A" a su vez necesita la librería "B" 
 			para funcionar. "B" se convierte entonces en una dependencia transitiva de 
-			tu proyecto, aunque no la hayas declarado directamente. Así, 'spring-boot-starter' 
-			es una dependencia directa y las que necesita son las transitivas. Maven 
+			tu proyecto, aunque no la hayas declarado directamente. 
+			Asi, 'spring-boot-starter' es una dependencia directa y las que necesita son las transitivas. Maven 
 			no solo descarga las directas, también las transitivas. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -52,11 +52,12 @@
 
 		<!-- La sección <dependencyManagement> en el Effective POM define una lista 
 			de dependencias que pueden ser utilizadas en el proyecto, NO declara dependencias 
-			que se incluyan automáticamente en el proyecto. Si descomentas esta dependencia, 
-			se aa las Maven Dependencies, compruen la pestaDependencies. En el Effective 
-			POM buscando con ctrl + F 'angus-mail', verla versique Spring Boot va a ade 
+			que se incluyan automaticamente en el proyecto. 
+			Si descomentas esta dependencia, 
+			se aniadira a las Maven Dependencies, compruebalo en la pestaDependencies. En el Effective 
+			POM buscando con ctrl + F 'angus-mail', veras la version que Spring Boot va a aniadir de 
 			esta dependencia (de la que hace el manegement) y que coincide con la que 
-			ha aen la pestaDependencies. -->
+			ha aniadido en la pestania Dependencies. -->
 		<!-- <dependency> <groupId>org.eclipse.angus</groupId> <artifactId>angus-mail</artifactId> 
 			</dependency> -->
 
@@ -66,8 +67,8 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!-- No le decimos versiporque spring boot starter ya incluye la suya. 
-			Aun ashay que poner la dependencia. -->
+		<!-- No le decimos version porque spring boot starter ya incluye la suya. 
+			Aun asi, hay que poner la dependencia. -->
 	</dependencies>
 
 	<build>
@@ -99,17 +100,4 @@
 		</plugins>
 	</build>
 
-	<url />
-	<licenses>
-		<license />
-	</licenses>
-	<developers>
-		<developer />
-	</developers>
-	<scm>
-		<connection />
-		<developerConnection />
-		<tag />
-		<url />
-	</scm>
 </project>
