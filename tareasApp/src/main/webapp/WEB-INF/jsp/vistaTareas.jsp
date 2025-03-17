@@ -9,7 +9,7 @@
 	<div class="container"> <!-- Con Bootstrap es una buena práctica meter todo el contenido del body dentro de una división con class="container" -->
 		<h2>Tus tareas, ${nom}</h2>
 	    <hr>
-	    <div>Las tareas son 
+	    <div>
 		    <table class="table"> <!-- Este atributo hace que Bootstrap lo ponga más bonito -->
 				  <tr>
 				    <th>Identificador</th>
@@ -17,6 +17,8 @@
 				    <th>Tarea</th>
 				    <th>Fecha Objetivo</th>
 				    <th>Realizada</th>
+				    <th></th>
+				    <th></th>
 				  </tr>
 				  <c:forEach items="${tareas}" var="tarea">
 					  <tr>
@@ -25,6 +27,8 @@
 					    <td>${tarea.descripcion}</td>
 					    <td>${tarea.fechaObjetivo}</td>
 					    <td>${tarea.hecho}</td>
+					    <td> <a href="actualizar-tarea?id=${tarea.id}" class="btn btn-success">Actualizar</a></td>
+					    <td> <a href="borrar-tarea?id=${tarea.id}" class="btn btn-warning">Borrar</a></td>
 			  		  </tr>
 				  </c:forEach>
 			</table>

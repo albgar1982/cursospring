@@ -2,11 +2,23 @@ package com.cursospring.tareasApp;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.Size;
+
+/*
+ * Para que las anotaciones de validación (como @Size) surtan efecto, hay que agregar la anotación @Valid al parámetro 
+ * del controlador que recibe el objeto Tarea.
+ * También se debe agregar un parámetro BindingResult para capturar los errores de validación.
+ */
 public class Tarea {
 
 	private int id;
 	private String nombreUsuario;
+	
+	@Size(min=5, message="La descripción debe tener al menos 5 caracteres") //Para validar la longitud de la descripción
 	private String descripcion;
+	
+	//@Future(message="La fecha objetivo no puede ser anterior a la actual") //Para validar que la fecha objetivo sea futura
 	private LocalDate fechaObjetivo;
 	private boolean hecho;
 	
@@ -59,7 +71,6 @@ public class Tarea {
 		this.hecho = hecho;
 	}
 
-	@Override
 	public String toString() {
 		return "Tareas [id=" + id + ", nombreUsuario=" + nombreUsuario + ", descripcion=" + descripcion
 				+ ", fechaObjetivo=" + fechaObjetivo + ", hecho=" + hecho + "]";
