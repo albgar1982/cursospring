@@ -2,6 +2,7 @@ package com.cursospring.tareasApp;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+//import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -40,5 +41,16 @@ public class ServicioDeTareas {
 			tareas.removeIf(predicate);
 		}
 		 */
+	}
+
+	public Tarea recuperaTareaPorId(int id) {
+		if( tareas.containsKey(id) ) 
+			return tareas.get(id);
+		return null;
+	}
+
+	public void actualizaTarea(int id,String usuario, String descripcion, LocalDate fecha, boolean existe) {
+		borraPorId(id); //Borramos la tarea antigua
+		tareas.put(id, new Tarea(id,usuario,descripcion,fecha,existe)); //Añadimos la tarea actualizada
 	}
 }

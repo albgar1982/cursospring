@@ -73,6 +73,13 @@
 		    <version>3.6.0</version>
 		</dependency>
 		
+		<!-- WebJar para incluir Bootstrap Datepicker en la aplicación -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-datepicker</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		
 		<!-- Dependencia para pruebas en Spring Boot -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>

@@ -2,6 +2,8 @@ package com.cursospring.tareasApp;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Size;
 
@@ -18,7 +20,8 @@ public class Tarea {
 	@Size(min=5, message="La descripción debe tener al menos 5 caracteres") //Para validar la longitud de la descripción
 	private String descripcion;
 	
-	//@Future(message="La fecha objetivo no puede ser anterior a la actual") //Para validar que la fecha objetivo sea futura
+	@Future(message="La fecha tiene que ser mayor al día actual") //Para validar que la fecha objetivo sea futura
+	@DateTimeFormat(pattern = "yyyy/MM/dd") // Indica el formato esperado
 	private LocalDate fechaObjetivo;
 	private boolean hecho;
 	
