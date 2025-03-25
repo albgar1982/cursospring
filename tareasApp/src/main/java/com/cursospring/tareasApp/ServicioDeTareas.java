@@ -2,7 +2,8 @@ package com.cursospring.tareasApp;
 
 import java.time.LocalDate;
 import java.util.HashMap;
-//import java.util.function.Predicate;
+import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -13,13 +14,19 @@ public class ServicioDeTareas {
 	private static int contadorDeTareas; //Estático para que pertenezca a la clase y cada tarea acceda al mismo sumándole uno más. Va a ser el Id de las tareas.
 	
 	static {
-		tareas.put( ++contadorDeTareas,new Tarea(contadorDeTareas, "Alberto", "Aprender Spring", LocalDate.now().plusYears(1), false) ); //now() devuelve la fecha actual y plusYears() añade el número de años pasados como argumento
-		tareas.put( ++contadorDeTareas,new Tarea(contadorDeTareas, "Alberto", "Aprender Git", LocalDate.now().plusYears(1), false) ); 
-		tareas.put( ++contadorDeTareas,new Tarea(contadorDeTareas, "Alberto", "Aprender Angular", LocalDate.now().plusYears(2), false) ); 
+		tareas.put( ++contadorDeTareas,new Tarea(contadorDeTareas, "Alber", "Aprender Spring", LocalDate.now().plusYears(1), false) ); //now() devuelve la fecha actual y plusYears() añade el número de años pasados como argumento
+		tareas.put( ++contadorDeTareas,new Tarea(contadorDeTareas, "Alber", "Aprender Git", LocalDate.now().plusYears(1), false) ); 
+		tareas.put( ++contadorDeTareas,new Tarea(contadorDeTareas, "Alber", "Aprender Angular", LocalDate.now().plusYears(2), false) ); 
 	}
 	
-	public HashMap<Integer,Tarea> getTareasPorUsuario(String usuario){
-		return tareas;
+	public List<Tarea> getTareasPorUsuario(String nombreUsuario){
+		//Creamos un predicado (una condición) para filtrar las tareas por el nombre del usuario
+		Predicate<? super Tarea> predicate = tarea -> tarea.getNombreUsuario().equalsIgnoreCase(nombreUsuario);
+		//Obtenemos las tareas que cumplen la condición y las convertimos en una lista
+		return tareas.values()  // Obtienes Collection<Tarea>
+                .stream()  // Conviertes a Stream<Tarea>
+                .filter(predicate)  // Filtra por usuario
+                .toList(); // Convierte a List<Tarea>
 	}
 	
 	public void ponTarea(String nombreUsuario, String descripcion, LocalDate fechaObjetivo, boolean hecho) {
