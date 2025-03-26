@@ -88,7 +88,7 @@ public class ControladorDeTareas {
 		return "redirect:tareas"; //Con redirect llamamos al ENDPOINT que queramos
 	}
 	
-	//Como hay difi
+	//Como hay que mostrar el nombre del usuario en la vista, lo obtenemos del UserDetails que guardamos en la sesión durante el login
 	private String getNombreUsuarioLogueado() {
 		return SecurityContextHolder.getContext().getAuthentication().getName();
 	}
