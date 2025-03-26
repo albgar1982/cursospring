@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <!-- Para poder usar la libreria JSTL -->
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <!-- Esto es para que se vean bien los caracteres especiales -->
 <%@ include file="comunes/header.jspf" %> <!-- Incluimos el header  -->
 <%@ include file="comunes/barraNavegacion.jspf" %>	<!-- Incluimos la barra de navegacion -->
 		
