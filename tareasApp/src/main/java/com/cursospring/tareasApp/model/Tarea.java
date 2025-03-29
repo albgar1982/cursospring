@@ -1,4 +1,4 @@
-package com.cursospring.tareasApp;
+package com.cursospring.tareasApp.model;
 
 import java.time.LocalDate;
 
@@ -11,12 +11,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Size;
+import lombok.NoArgsConstructor;
 
 /*
  * Para que las anotaciones de validación (como @Size) surtan efecto, hay que agregar la anotación @Valid al parámetro 
  * del controlador que recibe el objeto Tarea.
  * También se debe agregar un parámetro BindingResult para capturar los errores de validación.
  */
+@NoArgsConstructor //Necesario para crear nuevas instancias en BBDD
 @Entity(name = "tareas") // Para que JPA sepa que esta clase es una entidad y que se debe mapear a una tabla de la base de datos. Con name se puede especificar el nombre de la tabla
 public class Tarea {
 
@@ -44,6 +46,14 @@ public class Tarea {
 		this.descripcion = descripcion;
 		this.fechaObjetivo = fechaObjetivo;
 		this.hecho = hecho;
+	}
+	
+	// Constructor para nuevos registros (sin ID). Al hacer el POST de la vista tareaNueva.jsp, se crea un nuevo objeto Tarea con los datos del formulario y no añadimos Id porque es autoincremental y va gestionado por la H2
+	public Tarea(String nombreUsuario, String descripcion, LocalDate fechaObjetivo, boolean hecho) {
+	    this.nombreUsuario = nombreUsuario;
+	    this.descripcion = descripcion;
+	    this.fechaObjetivo = fechaObjetivo;
+	    this.hecho = hecho;
 	}
 
 	public int getId() {

@@ -1,4 +1,4 @@
-package com.cursospring.tareasApp;
+package com.cursospring.tareasApp.service;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -7,8 +7,10 @@ import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
+import com.cursospring.tareasApp.model.Tarea;
+
 @Service //Spring generará un Bean y lo inyectará en el constructor del controlador (inyección de dependencias)
-public class ServicioDeTareas {
+public class TareasService {
 
 	private static HashMap<Integer,Tarea> tareas = new HashMap<>();
 	private static int contadorDeTareas; //Estático para que pertenezca a la clase y cada tarea acceda al mismo sumándole uno más. Va a ser el Id de las tareas.

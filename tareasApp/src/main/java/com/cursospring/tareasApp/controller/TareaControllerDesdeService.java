@@ -1,4 +1,4 @@
-package com.cursospring.tareasApp;
+package com.cursospring.tareasApp.controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,16 +12,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.cursospring.tareasApp.model.Tarea;
+import com.cursospring.tareasApp.service.TareasService;
+
 import jakarta.validation.Valid;
 
-@Controller
+//@Controller DESCOMENTAR ESTE Y COMENTAR EL DE TareaController y este será el controlador, escuchando las requests sobre los endpoints. Si no, coinciden y Spring falla, al no saber a cuáles disparar. Recuerda, este recoge y salva las tareas del mismo servicio, de la lista estática.
 @SessionAttributes("nom") //Así tenemos acceso a la sesión, en la que habíamos guardado el nombre del usuario durante el login (ahora ya es la parte de la vista welcome.jsp)
-public class ControladorDeTareas {
+public class TareaControllerDesdeService {
 
-	private ServicioDeTareas servicioDeTareas;
+	private TareasService servicioDeTareas;
 	
 	//Spring, al crear el controlador (debido al @Controller), hará uso de este constructor e inyectará automáticamente el Bean del servicio.
-	public ControladorDeTareas(ServicioDeTareas servicioDeTareas) {
+	public TareaControllerDesdeService(TareasService servicioDeTareas) {
 		super();
 		this.servicioDeTareas = servicioDeTareas;
 	}

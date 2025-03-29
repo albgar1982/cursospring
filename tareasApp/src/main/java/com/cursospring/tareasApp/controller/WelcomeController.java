@@ -1,4 +1,4 @@
-package com.cursospring.tareasApp.login;
+package com.cursospring.tareasApp.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 @SessionAttributes("nom") // Esto hace que nom se incluya en la SESIÓN HTTP del usuario, estando disponible esta info para todas las vistas, no sólo para el modelo welcome.jsp
-public class ControladorWelcome {
+public class WelcomeController {
 
 	// http://localhost:8080 GET inicial, abre la página de arranque
 	@GetMapping("/")

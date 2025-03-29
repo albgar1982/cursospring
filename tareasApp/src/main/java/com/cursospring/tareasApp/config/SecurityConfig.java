@@ -1,4 +1,4 @@
-package com.cursospring.tareasApp.security;
+package com.cursospring.tareasApp.config;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -17,7 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-public class SpringSecurityConfiguration {
+public class SecurityConfig {
 
     @Bean
     public PasswordEncoder generaCodificadorContrasenias() {
