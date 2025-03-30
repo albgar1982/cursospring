@@ -105,13 +105,28 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		
-		<!-- Dependencia para H2 Database -->
+		<!-- Dependencia para H2 Database 
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope> <!-- Solo se necesita en tiempo de ejecución -->
-		</dependency>
+			<scope>runtime</scope> 
+		</dependency> -->
+		
+		<!-- Use this for Spring Boot 3.1 and higher -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+		</dependency> 
+		 
+		<!-- Use this if you are using Spring Boot 3.0 or lower
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+			</dependency> 
+		-->
 	</dependencies>
+	
+	
 
 	<build>
 		<plugins>
