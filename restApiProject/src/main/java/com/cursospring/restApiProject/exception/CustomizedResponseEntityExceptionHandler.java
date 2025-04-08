@@ -24,7 +24,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	}
  
 	//ResponseEntity<DetallesError>: Indica que este método siempre devuelve una respuesta HTTP cuyo body es un objeto DetallesError.
-	@ExceptionHandler(UserNotFoundException.class)
+	@ExceptionHandler( { UserNotFoundException.class, PostNotFoundException.class } ) //Captura las excepciones de usuario y post no encontrados)
 	public final ResponseEntity<DetallesError> handleUserNotFoundException(Exception ex, WebRequest request) throws Exception {
 		DetallesError errorDetails = new DetallesError(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
 		

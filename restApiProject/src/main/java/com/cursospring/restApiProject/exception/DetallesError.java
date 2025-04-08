@@ -4,26 +4,26 @@ import java.time.LocalDateTime;
 
 public class DetallesError {
 
-	private LocalDateTime momento;
-	private String mensaje;
-	private String detalles;
+	private LocalDateTime timeStamp; //Momento en el que se produce el error
+	private String message; //Mensaje de error
+	private String details; //Detalles del error
 
-	public DetallesError(LocalDateTime momento,String mensaje, String detalles) {
+	public DetallesError(LocalDateTime timeStamp,String message, String details) {
 		super();
-		this.momento = momento;
-		this.mensaje = mensaje;
-		this.detalles = detalles;
+		this.timeStamp = timeStamp;
+		this.message = message;
+		this.details = details;
 	}
 	
-	public LocalDateTime getMomento() {
-		return momento;
+	public LocalDateTime getTimeStamp() {
+		return timeStamp; //Momento en el que se produce el error;
 	}
 
-	public String getMensaje() {
-		return mensaje;
+	public String getMessage() {
+		return message;
 	}
 
-	public String getDetalles() {
-		return detalles;
+	public String getDetails() {
+		return details;
 	}
 }
